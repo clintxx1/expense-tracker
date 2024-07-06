@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.clintxx1.expensetracker"
     },
     "web": {
       "bundler": "metro",
@@ -27,11 +28,10 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router",
-      "@prisma/react-native"
+      "expo-router"
     ],
     "experiments": {
       "typedRoutes": true
+      }
     }
-  }
 }
