@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     gap: 10
   },
   bordered: {
-    borderWidth: 1,
+    borderWidth: 0,
     padding: 10,
     borderRadius: 10,
   },

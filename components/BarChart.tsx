@@ -1,6 +1,6 @@
 // app/components/BarChart.tsx
 import React from 'react';
-import { View } from 'react-native';
+import { useColorScheme, View } from 'react-native';
 import Svg, { Rect, Text } from 'react-native-svg';
 import { ThemedText } from './ThemedText';
 
@@ -12,11 +12,13 @@ interface BarChartProps {
 }
 
 const BarChart: React.FC<BarChartProps> = ({ data, width, height, barColor }) => {
+  const color = useColorScheme();
+  const fillColor = color === "dark" ? "white" : "black";
   const maxValue = Math.max(...data.map(item => item.value));
   const barWidth = width / data.length;
 
   return (
-    <View>
+    <View style={{ paddingHorizontal: 32 }}>
       <Svg width={"100%"} height={height}>
         {/* Draw bars */}
         {data.map((item, index) => {
@@ -67,7 +69,7 @@ const BarChart: React.FC<BarChartProps> = ({ data, width, height, barColor }) =>
               x={x}
               y={y}
               fontSize="10"
-              fill="white"
+              fill={fillColor}
               textAnchor="middle"
             >
               {item.value}
